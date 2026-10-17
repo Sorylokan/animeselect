@@ -1,0 +1,56 @@
+# ---- Dépendances (réinstalles avec `npm install`, jamais à committer) ----
+node_modules/
+
+# ---- FreeTheMemes : dev local uniquement, jamais publié sur GitHub Pages ----
+# (les fichiers restent sur votre disque, ils ne sont juste pas commités)
+games/FreeTheMemes/Project_files_devsource/
+games/FreeTheMemes/tests/
+games/FreeTheMemes/dev-server.mjs
+games/FreeTheMemes/network-test.html
+games/FreeTheMemes/index-true-save.html
+games/FreeTheMemes/src/ui/mockup_etiquettes_personnalisees.html
+games/FreeTheMemes/src/ui/odometer-for-dice.html
+
+# ---- Fichiers système / OS ----
+Thumbs.db
+Desktop.ini
+.DS_Store
+$RECYCLE.BIN/
+
+# ---- Editeurs / IDE ----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ---- Sauvegardes & anciens fichiers (vos .old / backups locaux) ----
+*.old
+*.bak
+*.disabled
+*.orig
+
+# ---- Logs & caches ----
+*.log
+logs/
+.cache/
+.tmp/
+tmp/
+
+# ---- Build / sortie (si un jour vous bundlez) ----
+dist/
+build/
+out/
+
+# ---- Variables d'environnement / secrets ----
+.env
+.env.*
+!.env.example
+games/GridOfGreed/tests/view.test.js
+games/Mimiri/src/jardin (1).js
+games/Mimiri/src/star.svg
+games/Mimiri/src/stars.svg
+games/scripts1.js
+games/styles1.css
+Dev_Files/
+tests/
