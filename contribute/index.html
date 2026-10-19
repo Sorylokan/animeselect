@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <title>AnimeSelect — Contribute</title>
+    <link rel="preconnect" href="https://graphql.anilist.co" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="top">
+        <div class="in">
+            <div class="logo">ANIME<span>SELECT</span></div>
+            <nav class="nav" id="nav"></nav>
+            <div class="tools">
+                <button id="lg" class="lg" aria-label="Langue / Language"></button>
+                <button id="th" aria-label="Thème / Theme">◐</button>
+            </div>
+        </div>
+    </header>
+    <div class="in">
+        <div class="frame">
+            <aside class="rail" id="rail"></aside>
+            <main class="main" id="main"></main>
+        </div>
+    </div>
+    <dialog id="dm">
+        <h2 id="dm-h"></h2>
+        <p id="dm-p"></p>
+        <div class="da">
+            <button class="btn s" data-a="dx"></button>
+            <button class="btn p" data-a="dok"></button>
+        </div>
+    </dialog>
+    <dialog id="dh">
+        <h2 id="dh-h"></h2>
+        <div id="dh-b"></div>
+        <div class="da">
+            <button class="btn p" data-a="hx"></button>
+        </div>
+    </dialog>
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
