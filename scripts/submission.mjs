@@ -54,7 +54,7 @@ export async function processSubmission({ body, author, issueNumber, submittedAt
   const summary = contributions.map((c) => ({
     anilist_id: c.anilist_id,
     title: titleOf(media.get(c.anilist_id)),
-    criteria: Object.keys(c.ratings).length,
+    ratings: c.ratings,
     mood_tags: c.mood_tags,
   }));
   return { status: "ok", files, summary };
@@ -70,13 +70,23 @@ export function invalidComment(errors) {
   ].join("\n");
 }
 
-export function pullRequestBody({ author, issueNumber, summary }) {
+// Display only: "–" for no opinion, " ?" for mitigated. Review files are unchanged.
+const ratingCell = (criterion, r) =>
+  r ? `${r.level} ${criterion.words.en[r.level - 1]}${r.confidence === "certain" ? "" : " ?"}` : "–";
+
+/** @param {{ criteria: object[] }} p criteria = taxonomy.json > criteria */
+export function pullRequestBody({ author, issueNumber, summary, criteria }) {
   return [
     `Suggestion from @${author} in #${issueNumber}.`,
     "",
-    "| Anime | Criteria | Moods |",
-    "|---|---|---|",
-    ...summary.map((s) => `| [${cell(s.title)}](https://anilist.co/anime/${s.anilist_id}) | ${s.criteria} | ${s.mood_tags.join(", ") || "–"} |`),
+    "| ID | Anime |",
+    "|:-:|:--|",
+    ...summary.map((s) => `| [${s.anilist_id}](https://anilist.co/anime/${s.anilist_id}) | ${cell(s.title)} |`),
+    "",
+    `| Criteria (/5) | ${summary.map((s) => s.anilist_id).join(" | ")} |`,
+    `|:--|${summary.map(() => ":-:|").join("")}`,
+    ...criteria.map((c) => `| ${c.label.en} | ${summary.map((s) => ratingCell(c, s.ratings[c.key])).join(" | ")} |`),
+    `| Moods | ${summary.map((s) => s.mood_tags.join(", ") || "–").join(" | ")} |`,
     "",
     "Merging adds these reviews to the library. `data/anime.json` is rebuilt automatically after the merge.",
     "",

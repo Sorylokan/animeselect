@@ -49,7 +49,7 @@ if (result.status === "invalid") {
 if (result.status === "ok") {
   mkdirSync(avisDir, { recursive: true });
   for (const f of result.files) writeFileSync(avisPath(f.anilist_id), JSON.stringify(f.reviews, null, 2) + "\n");
-  writeFileSync(resolve(out, "pr.md"), pullRequestBody({ author: issue.user.login, issueNumber: issue.number, summary: result.summary }));
+  writeFileSync(resolve(out, "pr.md"), pullRequestBody({ author: issue.user.login, issueNumber: issue.number, summary: result.summary, criteria: taxonomy.criteria }));
 }
 if (process.env.GITHUB_OUTPUT) appendFileSync(process.env.GITHUB_OUTPUT, `status=${result.status}\n`);
 console.log(`Issue #${issue.number}: ${result.status}`);
