@@ -1,0 +1,48 @@
+# After a merge on main: refetch identities from AniList, rebuild data/anime.json, commit.
+# Can also be run by hand: Actions → Library build → Run workflow.
+name: Library build
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/avis/**"
+      - "data/anilist-mapping.json"
+      - "data/taxonomy.json"
+      - "scripts/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: library-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Tests
+        run: npm test
+
+      - name: Rebuild the library
+        run: node scripts/build.mjs --refresh
+
+      - name: Commit if something changed
+        run: |
+          git add data/catalogue.json data/anime.json
+          if git diff --cached --quiet; then
+            echo "anime.json is up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Library: rebuild anime.json"
+          git push

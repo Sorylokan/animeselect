@@ -6,7 +6,7 @@ export const SECTIONS = [
   ["other", ["fan_service"]],
 ];
 export const CRITERIA = SECTIONS.flatMap(([, keys]) => keys);
-export const MOODS = ["absurd", "bittersweet", "brutal", "cheerful", "contemplative", "cozy", "dark", "epic", "hopeful", "intense", "melancholic", "mysterious", "noir", "nostalgic", "quirky", "romantic", "serene", "stylish", "tense", "tragic", "unsettling", "warm"];
+export const MOODS = ["absurd", "bittersweet", "brutal", "cerebral", "chaotic", "cheerful", "contemplative", "cozy", "dark", "dreamy", "energetic", "epic", "gritty", "hopeful", "intense", "melancholic", "mysterious", "noir", "nostalgic", "playful", "quirky", "romantic", "serene", "stylish", "surreal", "tense", "tragic", "triumphant", "unsettling", "warm"];
 export const MAX_MOODS = 4;
 // Checkbox state -> confidence value sent to the bot.
 export const CONFIDENCE = { c: "certain", m: "mitigated" };

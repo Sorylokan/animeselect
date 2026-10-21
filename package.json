@@ -1,0 +1,10 @@
+{
+  "name": "animeselect",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node --test scripts/tests/*.test.mjs",
+    "build:library": "node scripts/build.mjs"
+  }
+}

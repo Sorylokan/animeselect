@@ -1,0 +1,58 @@
+# Suggestion issue → pull request with the new reviews (data/avis/*.json).
+# Invalid issue → comment explaining why. Issue without the marker → ignored.
+name: Library suggestion
+
+on:
+  issues:
+    types: [opened, edited, reopened]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: suggestion-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  process:
+    if: contains(github.event.issue.body, '<!-- animeselect:library-suggestion -->')
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      ISSUE: ${{ github.event.issue.number }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - id: bot
+        run: node scripts/process-issue.mjs
+
+      - name: Explain what is wrong
+        if: steps.bot.outputs.status == 'invalid'
+        run: gh issue comment "$ISSUE" --body-file "$RUNNER_TEMP/comment.md"
+
+      - name: Open or update the pull request
+        if: steps.bot.outputs.status == 'ok'
+        run: |
+          branch="suggestion/issue-$ISSUE"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$branch"
+          git add data/avis
+          if git diff --cached --quiet; then
+            echo "Nothing new to record."
+            exit 0
+          fi
+          git commit -m "Library: suggestion #$ISSUE"
+          git push --force origin "$branch"
+          if gh pr view "$branch" --json state -q .state 2>/dev/null | grep -q OPEN; then
+            gh pr edit "$branch" --body-file "$RUNNER_TEMP/pr.md"
+          else
+            gh pr create --head "$branch" --base "${{ github.event.repository.default_branch }}" \
+              --title "Library: suggestion #$ISSUE" --body-file "$RUNNER_TEMP/pr.md"
+          fi

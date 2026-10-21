@@ -1,0 +1,228 @@
+{
+  "version": 2,
+  "criteria": [
+    {
+      "key": "art_direction",
+      "label": { "fr": "Direction artistique", "en": "Art direction" },
+      "description": {
+        "fr": "Identité visuelle : composition, couleurs, lumière, décors et effets visuels.",
+        "en": "Visual identity: composition, colours, light, backgrounds and visual effects."
+      },
+      "words": {
+        "fr": ["Générique", "Classique", "Soignée", "Marquée", "Unique"],
+        "en": ["Generic", "Classic", "Refined", "Distinctive", "Unique"]
+      },
+      "usedForSimilarity": true
+    },
+    {
+      "key": "three_d_usage",
+      "label": { "fr": "Place de la 3D", "en": "3D usage" },
+      "description": {
+        "fr": "Place et importance des éléments réalisés en trois dimensions.",
+        "en": "Place and weight of elements made in three dimensions."
+      },
+      "words": {
+        "fr": ["Aucune", "Discrète", "Présente", "Marquée", "Omniprésente"],
+        "en": ["None", "Discreet", "Present", "Marked", "Omnipresent"]
+      },
+      "usedForSimilarity": true
+    },
+    {
+      "key": "character_design",
+      "label": { "fr": "Character design", "en": "Character design" },
+      "description": {
+        "fr": "Simplicité, précision, niveau de détail et caractère distinctif des personnages.",
+        "en": "Simplicity, precision, level of detail and distinctiveness of the characters."
+      },
+      "words": {
+        "fr": ["Simple", "Standard", "Soigné", "Travaillé", "Distinctif"],
+        "en": ["Simple", "Standard", "Refined", "Detailed", "Distinctive"]
+      },
+      "usedForSimilarity": true
+    },
+    {
+      "key": "animation",
+      "label": { "fr": "Animation", "en": "Animation" },
+      "description": {
+        "fr": "Fluidité, timing, transitions et exécution des mouvements sur l’ensemble de l’œuvre.",
+        "en": "Fluidity, timing, transitions and execution of movement across the whole work."
+      },
+      "words": {
+        "fr": ["Statique", "Limitée", "Correcte", "Fluide", "Superbe"],
+        "en": ["Static", "Limited", "Correct", "Fluid", "Superb"]
+      },
+      "usedForSimilarity": true
+    },
+    {
+      "key": "mood",
+      "label": { "fr": "Ambiance", "en": "Mood" },
+      "description": {
+        "fr": "Luminosité générale de l’atmosphère, indépendamment de l’intensité émotionnelle.",
+        "en": "Overall brightness of the atmosphere, regardless of emotional intensity."
+      },
+      "words": {
+        "fr": ["Très sombre", "Sombre", "Nuancée", "Claire", "Lumineuse"],
+        "en": ["Very dark", "Dark", "Nuanced", "Bright", "Luminous"]
+      },
+      "usedForSimilarity": true
+    },
+    {
+      "key": "pacing",
+      "label": { "fr": "Rythme", "en": "Pacing" },
+      "description": {
+        "fr": "Vitesse de progression, du contemplatif au frénétique.",
+        "en": "Speed of progression, from contemplative to frenetic."
+      },
+      "words": {
+        "fr": ["Contemplatif", "Posé", "Équilibré", "Soutenu", "Effréné"],
+        "en": ["Contemplative", "Calm", "Balanced", "Brisk", "Frenetic"]
+      },
+      "usedForSimilarity": true
+    },
+    {
+      "key": "narrative_complexity",
+      "label": { "fr": "Complexité narrative", "en": "Narrative complexity" },
+      "description": {
+        "fr": "Complexité de l’intrigue, de ses ramifications et de ses révélations.",
+        "en": "Complexity of the plot, its branches and its reveals."
+      },
+      "words": {
+        "fr": ["Linéaire", "Simple", "Mesurée", "Dense", "Labyrinthique"],
+        "en": ["Linear", "Simple", "Measured", "Dense", "Labyrinthine"]
+      },
+      "usedForSimilarity": true
+    },
+    {
+      "key": "emotional_intensity",
+      "label": { "fr": "Intensité émotionnelle", "en": "Emotional intensity" },
+      "description": {
+        "fr": "Force avec laquelle l’œuvre sollicite les émotions.",
+        "en": "How strongly the work calls on emotions."
+      },
+      "words": {
+        "fr": ["Très calme", "Posée", "Modérée", "Forte", "Intense"],
+        "en": ["Very calm", "Calm", "Moderate", "Strong", "Intense"]
+      },
+      "usedForSimilarity": true
+    },
+    {
+      "key": "fan_service",
+      "label": { "fr": "Fan-service", "en": "Fan service" },
+      "description": {
+        "fr": "Fréquence et importance des éléments de fan-service. Critère principalement utilisé comme filtre selon les préférences.",
+        "en": "How often and how prominently fan service appears. Mostly used as a filter based on preferences."
+      },
+      "words": {
+        "fr": ["Aucun", "Léger", "Présent", "Marqué", "Omniprésent"],
+        "en": ["None", "Light", "Present", "Marked", "Omnipresent"]
+      },
+      "usedForSimilarity": false
+    }
+  ],
+  "genres": [
+    { "id": "action", "label": "Action", "label_en": "Action" },
+    { "id": "adventure", "label": "Aventure", "label_en": "Adventure" },
+    { "id": "comedy", "label": "Comédie", "label_en": "Comedy" },
+    { "id": "drama", "label": "Drame", "label_en": "Drama" },
+    { "id": "ecchi", "label": "Ecchi", "label_en": "Ecchi" },
+    { "id": "fantasy", "label": "Fantasy", "label_en": "Fantasy" },
+    { "id": "historical", "label": "Historique", "label_en": "Historical" },
+    { "id": "horror", "label": "Horreur", "label_en": "Horror" },
+    { "id": "martial_arts", "label": "Arts martiaux", "label_en": "Martial arts" },
+    { "id": "mecha", "label": "Mecha", "label_en": "Mecha" },
+    { "id": "music", "label": "Musique", "label_en": "Music" },
+    { "id": "mystery", "label": "Mystère", "label_en": "Mystery" },
+    { "id": "psychological", "label": "Psychologique", "label_en": "Psychological" },
+    { "id": "romance", "label": "Romance", "label_en": "Romance" },
+    { "id": "sci_fi", "label": "Science-fiction", "label_en": "Sci-fi" },
+    { "id": "slice_of_life", "label": "Tranche de vie", "label_en": "Slice of life" },
+    { "id": "sports", "label": "Sport", "label_en": "Sports" },
+    { "id": "supernatural", "label": "Surnaturel", "label_en": "Supernatural" },
+    { "id": "thriller", "label": "Thriller", "label_en": "Thriller" },
+    { "id": "western", "label": "Western", "label_en": "Western" }
+  ],
+  "demographics": [
+    { "id": "shonen", "label": "Shonen", "label_en": "Shonen" },
+    { "id": "seinen", "label": "Seinen", "label_en": "Seinen" },
+    { "id": "shojo", "label": "Shojo", "label_en": "Shojo" },
+    { "id": "josei", "label": "Josei", "label_en": "Josei" },
+    { "id": "kodomo", "label": "Kodomo", "label_en": "Kodomo" }
+  ],
+  "themes": [
+    { "id": "alchemy", "label": "Alchimie", "label_en": "Alchemy" },
+    { "id": "ambition", "label": "Ambition", "label_en": "Ambition" },
+    { "id": "body_swap", "label": "Échange de corps", "label_en": "Body swap" },
+    { "id": "chosen_family", "label": "Famille choisie", "label_en": "Found family" },
+    { "id": "coming_of_age", "label": "Passage à l’âge adulte", "label_en": "Coming of age" },
+    { "id": "cooking", "label": "Cuisine", "label_en": "Cooking" },
+    { "id": "corruption", "label": "Corruption", "label_en": "Corruption" },
+    { "id": "crime", "label": "Crime", "label_en": "Crime" },
+    { "id": "destiny", "label": "Destin", "label_en": "Destiny" },
+    { "id": "disaster", "label": "Catastrophe", "label_en": "Disaster" },
+    { "id": "discrimination", "label": "Discrimination", "label_en": "Discrimination" },
+    { "id": "exploration", "label": "Exploration", "label_en": "Exploration" },
+    { "id": "family", "label": "Famille", "label_en": "Family" },
+    { "id": "folklore", "label": "Folklore", "label_en": "Folklore" },
+    { "id": "freedom", "label": "Liberté", "label_en": "Freedom" },
+    { "id": "friendship", "label": "Amitié", "label_en": "Friendship" },
+    { "id": "game_world", "label": "Monde de jeu", "label_en": "Game world" },
+    { "id": "harem", "label": "Harem", "label_en": "Harem" },
+    { "id": "identity", "label": "Identité", "label_en": "Identity" },
+    { "id": "immortality", "label": "Immortalité", "label_en": "Immortality" },
+    { "id": "inequality", "label": "Inégalités sociales", "label_en": "Social inequality" },
+    { "id": "isekai", "label": "Isekai", "label_en": "Isekai" },
+    { "id": "justice", "label": "Justice", "label_en": "Justice" },
+    { "id": "loneliness", "label": "Solitude", "label_en": "Loneliness" },
+    { "id": "loss_grief", "label": "Perte et deuil", "label_en": "Loss and grief" },
+    { "id": "love", "label": "Amour", "label_en": "Love" },
+    { "id": "magic", "label": "Magie", "label_en": "Magic" },
+    { "id": "memory", "label": "Mémoire", "label_en": "Memory" },
+    { "id": "monsters_demons", "label": "Monstres et démons", "label_en": "Monsters and demons" },
+    { "id": "moral_conflict", "label": "Dilemme moral", "label_en": "Moral dilemma" },
+    { "id": "mythology", "label": "Mythologie", "label_en": "Mythology" },
+    { "id": "nature", "label": "Nature", "label_en": "Nature" },
+    { "id": "politics_intrigue", "label": "Intrigues politiques", "label_en": "Political intrigue" },
+    { "id": "post_apocalyptic", "label": "Post-apocalyptique", "label_en": "Post-apocalyptic" },
+    { "id": "power_fantasy", "label": "Protagoniste surpuissant", "label_en": "Overpowered protagonist" },
+    { "id": "redemption", "label": "Rédemption", "label_en": "Redemption" },
+    { "id": "reincarnation", "label": "Réincarnation", "label_en": "Reincarnation" },
+    { "id": "religion", "label": "Religion", "label_en": "Religion" },
+    { "id": "revenge", "label": "Vengeance", "label_en": "Revenge" },
+    { "id": "rivalry", "label": "Rivalité", "label_en": "Rivalry" },
+    { "id": "sacrifice", "label": "Sacrifice", "label_en": "Sacrifice" },
+    { "id": "school", "label": "Vie scolaire", "label_en": "School life" },
+    { "id": "slow_life", "label": "Vie tranquille", "label_en": "Slow life" },
+    { "id": "society", "label": "Société", "label_en": "Society" },
+    { "id": "space", "label": "Espace", "label_en": "Space" },
+    { "id": "survival", "label": "Survie", "label_en": "Survival" },
+    { "id": "technology", "label": "Technologie", "label_en": "Technology" },
+    { "id": "time_travel", "label": "Voyage dans le temps", "label_en": "Time travel" },
+    { "id": "war", "label": "Guerre", "label_en": "War" }
+  ],
+  "moodTags": [
+    { "id": "absurd", "label": "Absurde", "label_en": "Absurd" },
+    { "id": "bittersweet", "label": "Doux-amer", "label_en": "Bittersweet" },
+    { "id": "brutal", "label": "Brutal", "label_en": "Brutal" },
+    { "id": "cheerful", "label": "Joyeux", "label_en": "Cheerful" },
+    { "id": "contemplative", "label": "Contemplatif", "label_en": "Contemplative" },
+    { "id": "cozy", "label": "Réconfortant", "label_en": "Cozy" },
+    { "id": "dark", "label": "Sombre", "label_en": "Dark" },
+    { "id": "epic", "label": "Épique", "label_en": "Epic" },
+    { "id": "hopeful", "label": "Plein d’espoir", "label_en": "Hopeful" },
+    { "id": "intense", "label": "Intense", "label_en": "Intense" },
+    { "id": "melancholic", "label": "Mélancolique", "label_en": "Melancholic" },
+    { "id": "mysterious", "label": "Mystérieux", "label_en": "Mysterious" },
+    { "id": "noir", "label": "Noir", "label_en": "Noir" },
+    { "id": "nostalgic", "label": "Nostalgique", "label_en": "Nostalgic" },
+    { "id": "quirky", "label": "Décalé", "label_en": "Quirky" },
+    { "id": "romantic", "label": "Romantique", "label_en": "Romantic" },
+    { "id": "serene", "label": "Apaisant", "label_en": "Serene" },
+    { "id": "stylish", "label": "Stylé", "label_en": "Stylish" },
+    { "id": "tense", "label": "Tendu", "label_en": "Tense" },
+    { "id": "tragic", "label": "Tragique", "label_en": "Tragic" },
+    { "id": "unsettling", "label": "Inquiétant", "label_en": "Unsettling" },
+    { "id": "warm", "label": "Chaleureux", "label_en": "Warm" }
+  ],
+  "formats": ["TV", "Movie", "OVA", "ONA", "Special"],
+  "statuses": ["finished", "airing", "unknown"]
+}
