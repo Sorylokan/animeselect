@@ -1,0 +1,48 @@
+[
+  {
+    "author": "Sorylokan",
+    "issue": null,
+    "submitted_at": "2026-10-23T19:00:39.639Z",
+    "ratings": {
+      "art_direction": {
+        "level": 2,
+        "confidence": "certain"
+      },
+      "three_d_usage": {
+        "level": 1,
+        "confidence": "certain"
+      },
+      "character_design": {
+        "level": 2,
+        "confidence": "certain"
+      },
+      "animation": {
+        "level": 2,
+        "confidence": "certain"
+      },
+      "mood": {
+        "level": 3,
+        "confidence": "certain"
+      },
+      "pacing": {
+        "level": 2,
+        "confidence": "certain"
+      },
+      "narrative_complexity": {
+        "level": 1,
+        "confidence": "certain"
+      },
+      "emotional_intensity": {
+        "level": 2,
+        "confidence": "certain"
+      },
+      "fan_service": {
+        "level": 5,
+        "confidence": "certain"
+      }
+    },
+    "mood_tags": [
+      "brutal"
+    ]
+  }
+]
