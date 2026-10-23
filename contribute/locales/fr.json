@@ -8,7 +8,10 @@
   "nav.about": "À propos",
 
   "home.title": "Donne ton avis sur un anime",
-  "home.intro": "Cherche un anime que tu as vu, choisis pour chaque critère le mot qui colle le mieux, puis envoie ton avis sur GitHub. Note l’anime dans son ensemble, toutes saisons confondues. Il te faut un compte GitHub.",
+  "home.intro": "Cherche un anime que tu as vu, choisis pour chaque critère le mot qui colle le mieux, puis envoie ton avis sur GitHub. Il te faut un compte GitHub.",
+  "whole.title": "Tu notes l’œuvre entière",
+  "whole.text": "Pas une saison, pas un arc : l’anime dans son ensemble, suites comprises. On sait que les saisons peuvent être très différentes. Mais le but est de faire découvrir d’autres animes, pas une saison en particulier. Merci d’en tenir compte !",
+  "whole.short": "Note l’œuvre entière, toutes saisons et tous arcs confondus.",
   "home.label": "Anime que tu as vu",
   "home.placeholder": "Titre de l’anime",
 

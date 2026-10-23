@@ -938,3 +938,24 @@ dialog p.f {
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone
 }
+
+.whole {
+    max-width: 34rem;
+    margin: 1rem 0 1.5rem;
+    padding: .8rem 1rem;
+    background: var(--tint);
+    border: 2px solid var(--ink);
+    border-left: 6px solid var(--mark)
+}
+
+.whole p {
+    margin: .3rem 0 0;
+    line-height: 1.5
+}
+
+.whole-short {
+    margin: .2rem 0 .4rem;
+    color: var(--mark);
+    font-weight: 700;
+    font-size: .9rem
+}

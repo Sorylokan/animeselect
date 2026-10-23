@@ -8,7 +8,10 @@
   "nav.about": "About",
 
   "home.title": "Give your take on an anime",
-  "home.intro": "Search for an anime you have watched, pick the word that fits best for each criterion, then send your review on GitHub. Rate the anime as a whole, all seasons included. You need a GitHub account.",
+  "home.intro": "Search for an anime you have watched, pick the word that fits best for each criterion, then send your review on GitHub. You need a GitHub account.",
+  "whole.title": "You are rating the whole work",
+  "whole.text": "Not one season, not one arc: the anime as a whole, sequels included. We know seasons can be very different. But the goal is to help people discover other anime, not a particular season. Thanks for keeping this in mind!",
+  "whole.short": "Rate the whole work, all seasons and arcs included.",
   "home.label": "Anime you have watched",
   "home.placeholder": "Anime title",
 
