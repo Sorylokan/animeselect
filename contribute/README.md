@@ -1,156 +1,105 @@
-# Community Contributions
+# Contributing to the library
 
-This document describes the community evaluation system planned for AnimeSelect, including the evaluation criteria, submission format, validation process, and review procedure.
+Thanks for stopping by! This page explains how you can describe anime for AnimeSelect, and what happens to your answers afterwards.
 
-## Purpose
+The library is the heart of the project. The recommendations will only be as good as the anime in it, and I can't rewatch hundreds of shows by myself. That's where you come in.
 
-AnimeSelect uses descriptive characteristics to identify similarities between anime that are not adequately represented by genre labels alone.
+👉 **[Open the contribution page](https://sorylokan.github.io/animeselect/contribute/)**
 
-Community contributions provide structured evaluations of these characteristics. Multiple assessments can be combined to build a more comprehensive catalog while accounting for differences in contributor confidence.
+## What you'll need
 
-Contributions are subject to validation and maintainer review before they are incorporated into the catalog.
+- A free GitHub account (your answers are sent as a GitHub issue).
+- An anime you've watched, and remember well enough.
 
-## Evaluation Criteria
+That's it. No coding.
 
-Contributors can evaluate nine characteristics. Each uses five descriptive levels, ordered from the lowest to the highest intensity or prominence for the characteristic in question.
+## How it goes
 
-| Criterion | Description |
-|---|---|
-| Art direction | The distinctiveness of the anime's overall artistic direction. |
-| 3D usage | The prominence of 3D animation in the work. |
-| Character design | The distinctiveness and level of detail of character designs. |
-| Animation | The fluidity and overall execution of animation. |
-| Mood | The overall brightness or darkness of the work. |
-| Pacing | The rhythm at which events and information unfold. |
-| Narrative complexity | The complexity of the narrative structure. |
-| Emotional intensity | The intensity of the emotions conveyed. |
-| Fan service | The presence and prominence of fan service. |
+1. Search for an anime. The search uses [AniList](https://anilist.co), so titles, years and pictures come from there.
+2. Answer the questions you can. You can skip any of them.
+3. If you want, pick up to four mood tags.
+4. Send it. The page opens a GitHub issue already filled in; you just have to confirm.
 
-The interface uses descriptive labels rather than numerical values.
+You can describe several anime before sending, up to 20 at once. For a big batch (more than about 7), the page gives you the text to paste into the issue yourself, because the link would get too long.
 
-The mood criterion refers specifically to brightness or darkness. It is distinct from the optional mood tags, which describe the broader atmosphere of an anime.
+One thing to know: **an anime means its first season.** Season 2, sequel movies and so on don't get their own entry. When you describe an anime, you can think about the whole show, not just the first season.
 
-Fan service is collected as a catalog characteristic for filtering purposes; it is not used to calculate similarity scores.
+## The nine questions
 
-## Mood Tags
+Each question has five answers, going from "very little" to "a lot". The page shows them as words, not numbers.
 
-Contributors may assign up to four mood tags to describe an anime's atmosphere.
+| Question | What it's about |
+| --- | --- |
+| Art direction | How distinctive the overall visual style is. |
+| 3D usage | How much 3D animation is used. |
+| Character design | How distinctive and detailed the characters look. |
+| Animation | How smooth and well executed the animation is. |
+| Mood | How bright or dark the anime feels overall. |
+| Pacing | How fast things happen. |
+| Narrative complexity | How complex the story is to follow. |
+| Emotional intensity | How strong the emotions are. |
+| Fan service | How much fan service there is. |
 
-Tags are selected from the project's predefined taxonomy. They complement the detailed evaluations and are not a substitute for them.
+A few notes:
 
-The catalog retains tags according to a configured community agreement threshold.
+- **Mood** is only about light versus dark. For the general vibe (cozy, mysterious, melancholic…), that's what the mood tags are for.
+- **Fan service** isn't used to find similar anime. It's only there so people can filter it out if they want to.
 
-## Confidence
+## How sure are you?
 
-Contributors can indicate their confidence in each evaluation:
+For each answer, you say whether you're **sure** or **not really sure**. Answers you're not sure about still count, just half as much.
 
-- `certain` — full contribution weight.
-- `mitigated` — reduced contribution weight.
-- No evaluation — the criterion is omitted.
+And if you don't remember, or can't judge, **just skip the question**. A skipped question is not a bad score, it simply means "no opinion". An honest blank is much more useful than a guess.
 
-Contributors should leave a criterion unanswered when they cannot assess it reliably. An unanswered criterion is not interpreted as a negative evaluation.
+## What happens next
 
-## Submission Process
+1. A small script checks that your issue is in the right format (known questions, answers between 1 and 5, valid tags, real anime, first season only). If something's wrong, it leaves a comment on the issue explaining what.
+2. I read it, and approve it if it looks fine.
+3. Your answers are added to the library, and the combined results are updated.
 
-The planned submission workflow is as follows:
+The script only checks the format. It can't tell if an answer is "right", and there isn't really a right answer anyway. That's why answers from several people are combined: for each question, the library keeps a kind of middle value of everyone's answers (answers you're sure about weigh more). It also keeps track of how many people answered, so an anime with a single answer isn't treated like a well-known one.
 
-1. Search for an anime using AniList.
-2. Select the relevant title and complete any applicable evaluations.
-3. Optionally select up to four mood tags.
-4. Submit the suggestion through GitHub.
-5. Allow automated validation and maintainer review to take place.
+Mood tags are kept when enough of the people who described that anime agree on them.
 
-At least one criterion must be evaluated to submit a contribution.
+## Your GitHub name and privacy
 
-For individual suggestions, the workflow prepares a GitHub Issue containing structured JSON. For multiple suggestions, the workflow generates a JSON file that can be attached to the issue.
+Issues on this repo are public, so anyone can see what you sent.
 
-The contribution interface is designed to work without an AnimeSelect account.
+Your GitHub username is saved with your answers. That's what lets you **change your mind later**: if you describe the same anime again, your new answers replace the old ones instead of counting twice.
 
-## Contribution Format
+Please don't put anything personal in the issue.
 
-Submissions use a versioned JSON structure. A simplified example follows:
+## For the curious: the format
+
+If you'd rather write the issue by hand, the page needs to find this exact line at the top:
+
+```
+<!-- animeselect:library-suggestion -->
+```
+
+followed by a JSON block like this one:
 
 ```json
 {
   "schema": 1,
   "contributions": [
     {
-      "anilist_id": 12345,
+      "anilist_id": 132474,
       "ratings": {
-        "art_direction": {
-          "level": 4,
-          "confidence": "certain"
-        },
-        "animation": {
-          "level": 3,
-          "confidence": "mitigated"
-        }
+        "pacing": { "level": 2, "confidence": "certain" },
+        "mood": { "level": 1, "confidence": "mitigated" }
       },
-      "mood_tags": ["mysterious", "stylish"]
+      "mood_tags": ["melancholic", "cozy"]
     }
   ]
 }
 ```
 
-The example is illustrative; the AniList identifier must correspond to a valid anime.
+- `anilist_id` is the number in the anime's AniList address.
+- The rating names are: `art_direction`, `three_d_usage`, `character_design`, `animation`, `mood`, `pacing`, `narrative_complexity`, `emotional_intensity`, `fan_service`.
+- `level` goes from 1 to 5. `confidence` is `certain` (sure) or `mitigated` (not really sure).
+- A skipped question is simply left out.
+- Up to 4 mood tags, taken from the list in [`data/taxonomy.json`](../data/taxonomy.json).
+- From 1 to 20 anime per issue, each one only once.
 
-The format has the following constraints:
-
-- Only the nine defined evaluation criteria are accepted.
-- Levels range from 1 to 5.
-- Confidence must be `certain` or `mitigated` when a rating is present.
-- Omitted criteria represent no evaluation.
-- Mood tags must be unique, valid taxonomy entries, with no more than four tags per anime.
-- A submission contains between one and twenty contributions, with no duplicate AniList identifiers.
-
-The schema version allows the contribution format to evolve in a controlled manner.
-
-## Validation and Review
-
-Automated validation checks the submission structure, allowed criteria, rating values, mood tags, contribution count, and AniList identifiers.
-
-Valid submissions are marked for review. Invalid submissions are rejected with feedback describing the detected errors.
-
-A trusted maintainer must approve a contribution before it is incorporated into the catalog. Approval triggers the catalog update workflow.
-
-Validation establishes that a submission conforms to the expected format; it does not establish that an evaluation is objectively correct.
-
-## Aggregation
-
-Community evaluations are stored separately from the generated anime catalog.
-
-For each criterion, the catalog combines available ratings using a confidence-weighted median. If the cumulative weight falls exactly between two levels, the resulting value is the mean of those adjacent levels.
-
-The resulting catalog records the combined value and the number of votes. Criteria without evaluations remain unassessed.
-
-Low vote counts are identified separately so that limited agreement is not mistaken for strong consensus.
-
-Mood tags are retained when their share of eligible contributions reaches the configured agreement threshold.
-
-## Data Sources and Storage
-
-AniList provides anime identifiers and metadata. Community evaluations are stored independently from catalog metadata and combined during catalog generation.
-
-The generated catalog is the data source consumed by the recommendation application.
-
-The contribution workflow uses GitHub Issues for submissions and GitHub Actions for automated validation and catalog processing.
-
-## Privacy and Attribution
-
-The submission workflow does not require an AnimeSelect account. Draft evaluations are intended to be stored locally in the contributor's browser.
-
-GitHub Issues may be publicly accessible. Contributors should not include personal or sensitive information in submissions.
-
-The contribution data format does not include contributor names or submission dates as fields within individual evaluation records. GitHub may nevertheless associate a submission with the contributor's account.
-
-## Scope
-
-The contribution system is intended to provide structured evaluation, automated validation, maintainer review, and reproducible catalog generation.
-
-It does not currently define contributor rankings, public contributor profiles, a separate account system, or automatic approval of submissions.
-
-## Contributing
-
-Before submitting an evaluation, review the criteria and their definitions carefully. Evaluate only characteristics you can assess, use confidence levels honestly, and leave unknown values unanswered.
-
-The aim is to build a consistent and useful catalog, not to establish a universal ranking of anime.
+If anything in your issue doesn't match this format, the script will leave a comment telling you what to fix.

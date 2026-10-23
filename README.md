@@ -1,102 +1,66 @@
 # AnimeSelect
 
-AnimeSelect is an anime recommendation website designed to identify meaningful similarities between anime beyond genre classifications alone.
+A small anime recommendation site I'm building in my free time.
 
-Rather than relying primarily on genres, popularity, or broad categorical labels, the project considers artistic direction, animation, narrative characteristics, atmosphere, and individual viewing preferences to help users discover anime suited to their tastes.
+It started from a frustration: most recommendation sites look at what you liked and send you more of the same genre. You loved a shonen? Here are ten more shonen. I got stuck in isekai that way, and after a while they all felt the same.
 
-## Project Overview
+AnimeSelect tries something else. Instead of genres, it looks at things like the art direction, the animation, the mood, the pacing or how heavy the story gets. The idea is that two anime from completely different genres can still feel close, and that's exactly the kind of suggestion I'd like to get.
 
-The recommendation engine builds a preference profile from anime the user likes and dislikes, supplemented by optional evaluations of specific characteristics. Current viewing preferences and explicit constraints are considered separately from long-term preferences.
+## Where things are
 
-The objective is to produce relevant recommendations while preserving room for discovery.
+Honestly, it's early days.
 
-The engine distinguishes between three recommendation categories:
+- **The anime library** is open. That's the part where people describe anime they've watched, and it's what the recommendations will be built on later. You can help right now (see below).
+- **The recommendation site** itself doesn't exist yet. I'll start on it once the library has enough anime in it.
 
-- **Top Match** — the strongest overall match for the user's preferences.
-- **Outsider** — a less familiar choice that shares several appealing characteristics with the user's profile.
-- **Wildcard** — a more unexpected recommendation supported by at least one identifiable point of compatibility.
+So if you came here looking for recommendations, there's nothing to try yet. Sorry! But you can help make it happen.
 
-Recommendations are accompanied by the reasons supporting their selection, relevant differences, and caveats where information is incomplete.
+## Helping with the library
 
-## Design Principles
+You don't need to know how to code. You pick an anime you've seen, answer a few questions about it (from 1 to 5, and only the ones you feel sure about), and send it. It's sent as a GitHub issue, so you need a free GitHub account.
 
-AnimeSelect is built around several principles:
+  ▶️ **[Open the contribution page](https://sorylokan.github.io/animeselect/contribute/)**
 
-- **Beyond genre classification.** Genres provide useful context but do not define the full character of an anime.
-- **Individual preferences over general rankings.** Recommendations reflect the user's tastes rather than relying on popularity or presumed universal quality.
-- **Discovery without arbitrary choices.** Less conventional recommendations must still have identifiable reasons for being suggested.
-- **Explicit handling of missing information.** Unknown characteristics are not treated as negative evaluations.
-- **Separation of lasting and temporary preferences.** General tastes remain distinct from what the user wants to watch at a particular moment.
-- **Traceable recommendations.** Each recommendation must be supported by available catalog data and the engine's calculations.
+Everything about how it works (the questions, what happens to your answers, who checks them) is explained in **[contribute/README.md](contribute/README.md)**.
 
-## Recommendation Engine
+## How the recommendations should work
 
-The initial engine uses deterministic, configurable scoring and selection rules. It does not rely on machine learning.
+This part is still on paper, so it will probably change once I actually build it.
 
-The recommendation process consists of four main stages:
+You'd tell the site a few anime you loved and a few you didn't, and maybe what you're in the mood for tonight. It would then compare that with the library and suggest three kinds of picks:
 
-1. Build a preference profile from known information.
-2. Filter out anime that violate explicit constraints.
-3. Calculate compatibility using the available characteristics and preferences.
-4. Select complementary recommendations and generate explanations from the underlying data.
+- **Top match**: the closest to what you like.
+- **Outsider**: something a bit less obvious, but with several things you seem to enjoy.
+- **Wildcard**: a surprise, but always with at least one clear reason behind it.
 
-Scores are used to rank candidates; they are not probabilities of enjoyment. Missing data is handled separately from compatibility, and hard constraints cannot be overridden by a high score.
+Each suggestion should come with the reasons why it was picked, and a warning when the library doesn't know much about that anime yet. No AI or machine learning in there, just rules and scores I can read and adjust.
 
-The scoring model and selection thresholds are configurable and will be evaluated against practical test cases as development progresses.
+## What's in this repo
 
-## Community Contributions
+| Folder | What it is |
+| --- | --- |
+| `contribute/` | The contribution page (plain HTML, CSS and JavaScript). |
+| `scripts/` | The small scripts that check new contributions and rebuild the library. |
+| `data/` | The library itself: everyone's answers, and the combined result. |
+| `.github/workflows/` | The automation that runs those scripts on GitHub. |
 
-AnimeSelect is intended to incorporate structured community evaluations of anime characteristics. Contributions are reviewed before being incorporated into the catalog.
+## Planned tech
 
-The proposed workflow uses AniList for anime metadata and GitHub Issues for submission and review. Automated validation checks the structure and validity of submitted data before maintainer review.
+For the recommendation site, I'm currently thinking of React with TypeScript and Vite, hosted for free on GitHub Pages. Nothing is set in stone though: I'm learning as I go, and I may end up with something simpler. The plan is to keep everything in the browser, with no account and no server. Your preferences would stay on your device.
 
-See the community contribution documentation for the submission process and data format.
+## For developers
 
-## Technology
+You only need Node.js 22 or newer. There are no dependencies to install.
 
-The application is built with:
-
-- React
-- TypeScript
-- Vite
-- CSS
-- Vitest
-- Playwright
-
-AnimeSelect is designed as a static web application hosted on GitHub Pages. The initial architecture requires no application backend or user accounts. User preference data is intended to remain in the browser, with local persistence and import/export support.
-
-## Development Status
-
-AnimeSelect is under development. The recommendation model, catalog, and contribution workflow are being developed incrementally and may change as they are tested.
-
-The initial scope prioritizes a reproducible recommendation engine, explicit data handling, and a maintainable client-side architecture.
-
-## Local Development
-
-Requirements: Node.js and npm.
-
-```bash
-npm install
-npm run dev
 ```
-
-Run the test suite and production build:
-
-```bash
-npm test
-npm run build
+npm test              # run the tests
+npm run build:library # rebuild data/anime.json from the contributions
 ```
-
-The production build is generated by Vite.
-
-## Deployment
-
-The project is intended to be published through GitHub Pages at:
-
-`https://sorylokan.github.io/animeselect/`
-
-The Vite base path must match `/animeselect/`. Deployment is intended to be handled through GitHub Actions.
 
 ## License
 
-See the repository's `LICENSE` file for the applicable terms, if a license is provided.
+There's no license yet. I'm still figuring out which one fits best, for the code and for the community data. Until then, feel free to look around and contribute, but please ask before reusing anything.
+
+---
+
+**Note:** I'm not a professional developer, just someone who likes tinkering with websites. This project is heavily assisted by AI (for code, and for writing some of the docs). I make the decisions, check what goes in, and try to understand everything I publish.
