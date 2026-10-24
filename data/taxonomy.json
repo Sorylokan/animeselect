@@ -106,11 +106,11 @@
       "usedForSimilarity": true
     },
     {
-      "key": "fan_service",
-      "label": { "fr": "Fan-service", "en": "Fan service" },
+      "key": "sexualization",
+      "label": { "fr": "Sexualisation", "en": "Sexualization" },
       "description": {
-        "fr": "Fréquence et importance des éléments de fan-service. Critère principalement utilisé comme filtre selon les préférences.",
-        "en": "How often and how prominently fan service appears. Mostly used as a filter based on preferences."
+        "fr": "Mise en scène qui insiste sur le corps de façon suggestive : cadrages appuyés, physique exagérée, poses ou situations tendancieuses. Ne comptent pas : la romance, les baisers, la nudité non suggestive, ni les clins d’œil aux fans. Critère utilisé uniquement comme filtre.",
+        "en": "Staging that dwells on bodies in a suggestive way: lingering camera angles, exaggerated physics, suggestive poses or situations. Does not count: romance, kissing, non-suggestive nudity, or nods to fans. Used only as a filter."
       },
       "words": {
         "fr": ["Aucun", "Léger", "Présent", "Marqué", "Omniprésent"],

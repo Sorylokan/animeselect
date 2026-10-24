@@ -9,7 +9,7 @@ export const CRITERIA_KEYS = [
   "pacing",
   "narrative_complexity",
   "emotional_intensity",
-  "fan_service",
+  "sexualization",
 ];
 
 export const LEVEL_MIN = 1;

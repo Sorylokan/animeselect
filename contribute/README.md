@@ -96,7 +96,7 @@ followed by a JSON block like this one:
 ```
 
 - `anilist_id` is the number in the anime's AniList address.
-- The rating names are: `art_direction`, `three_d_usage`, `character_design`, `animation`, `mood`, `pacing`, `narrative_complexity`, `emotional_intensity`, `fan_service`.
+- The rating names are: `art_direction`, `three_d_usage`, `character_design`, `animation`, `mood`, `pacing`, `narrative_complexity`, `emotional_intensity`, `sexualization`.
 - `level` goes from 1 to 5. `confidence` is `certain` (sure) or `mitigated` (not really sure).
 - A skipped question is simply left out.
 - Up to 4 mood tags, taken from the list in [`data/taxonomy.json`](../data/taxonomy.json).
